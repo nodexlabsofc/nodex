@@ -6,11 +6,13 @@ import { CtaForm } from "@/components/cta-block";
 import { FaqSection, type FaqItem } from "@/components/faq";
 import { StepList, type Step } from "@/components/step-track";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Chatbots",
   description:
     "Chatbot que responde com a sua base, no canal do cliente, e passa para humano sem fazer a pessoa repetir.",
+  ...pageCanonical("/solucoes/chatbots"),
 };
 
 const AUDIENCE = [

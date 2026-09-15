@@ -3,11 +3,13 @@ import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Soluções",
   description:
     "Chatbot para conversa. Automação para processo. Sistema quando a ferramenta pronta não serve.",
+  ...pageCanonical("/solucoes"),
 };
 
 const FRONTS = [

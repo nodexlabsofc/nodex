@@ -4,6 +4,7 @@ import { IBM_Plex_Sans, JetBrains_Mono, Poppins } from "next/font/google";
 import { Banner } from "@/components/banner";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { SITE_DESCRIPTION, SITE_URL, siteJsonLd } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -34,25 +35,44 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nodexlabsbr.com.br"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Nodex Labs — Chatbots, automações e sistemas",
     template: "%s · Nodex Labs",
   },
-  description:
-    "Nodex Labs constrói chatbots, automações e sistemas sob medida. Engenharia e IA no mesmo time.",
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "/",
     siteName: "Nodex Labs",
     title: "Sistemas com IA que trabalham sozinhos.",
-    description:
-      "Nodex Labs constrói chatbots, automações e sistemas sob medida. Engenharia e IA no mesmo time.",
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sistemas com IA que trabalham sozinhos.",
+    description: SITE_DESCRIPTION,
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
   },
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 
 export const viewport: Viewport = {
@@ -73,6 +93,12 @@ export default function RootLayout({
       className={`${poppins.variable} ${plex.variable} ${jetbrains.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
         <a href="#conteudo" className="nx-btn sr-only focus:not-sr-only">
           Pular para o conteúdo
         </a>

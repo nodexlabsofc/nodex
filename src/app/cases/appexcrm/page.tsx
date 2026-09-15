@@ -6,11 +6,13 @@ import { CaseCoverflow, type CaseSlide } from "@/components/case-coverflow";
 import { CtaButtons } from "@/components/cta-buttons";
 import { StepList, type Step } from "@/components/step-track";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Case AppexCRM",
   description:
     "Inbox de WhatsApp, funil Kanban, automação e agenda. O time vende no mesmo lugar.",
+  ...pageCanonical("/cases/appexcrm"),
 };
 
 const SCREENS: CaseSlide[] = [

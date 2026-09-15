@@ -4,11 +4,13 @@ import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Case Cleanox",
   description:
     "Ordens de serviço, agenda, financeiro, comissão e app do profissional. Cliente e caixa ficam na marca.",
+  ...pageCanonical("/cases/cleanox"),
 };
 
 const BUILT = [

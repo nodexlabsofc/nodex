@@ -8,11 +8,13 @@ import {
   LegalHeader,
   LegalText,
 } from "@/components/legal";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description:
     "Regras de uso deste site e do canal de contato da Nodex Labs.",
+  ...pageCanonical("/termos"),
 };
 
 const ALLOWED = [

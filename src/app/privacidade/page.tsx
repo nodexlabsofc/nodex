@@ -8,12 +8,14 @@ import {
   LegalTable,
   LegalText,
 } from "@/components/legal";
+import { pageCanonical } from "@/lib/seo";
 import { EMAIL, PHONE_DISPLAY } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
     "Como a Nodex Labs coleta, usa, armazena e protege dados pessoais.",
+  ...pageCanonical("/privacidade"),
 };
 
 const LEGAL_BASES = [
