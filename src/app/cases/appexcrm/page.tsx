@@ -5,15 +5,15 @@ import Link from "next/link";
 import { CaseCoverflow, type CaseSlide } from "@/components/case-coverflow";
 import { CtaButtons } from "@/components/cta-buttons";
 import { StepList, type Step } from "@/components/step-track";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Case AppexCRM",
+export const metadata: Metadata = pageMeta("/cases/appexcrm", {
+  title: "CRM AppexCRM",
   description:
     "Inbox de WhatsApp, funil Kanban, automação e agenda. O time vende no mesmo lugar.",
-  ...pageCanonical("/cases/appexcrm"),
-};
+});
 
 const SCREENS: CaseSlide[] = [
   {
@@ -75,6 +75,7 @@ const FLOW: Step[] = [
 export default function AppexcrmPage() {
   return (
     <>
+      <PageJsonLd path="/cases/appexcrm" />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="78%" glowStrength={0.38} scan="full" />
         <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-5 pt-20 pb-14 md:gap-12 md:px-8 md:pt-28 md:pb-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14 lg:px-12">

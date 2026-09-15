@@ -4,15 +4,15 @@ import Link from "next/link";
 import { CtaForm } from "@/components/cta-block";
 import { FaqSection, type FaqItem } from "@/components/faq";
 import { PieceStage } from "@/components/piece-stage";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Automações",
+export const metadata: Metadata = pageMeta("/solucoes/automacoes", {
+  title: "Automação de processo com IA",
   description:
     "Leitura de documento, decisão e registro no sistema que vocês já usam. Com trilha para auditar.",
-  ...pageCanonical("/solucoes/automacoes"),
-};
+});
 
 const PIECES = [
   {
@@ -86,6 +86,7 @@ const FAQ: FaqItem[] = [
 export default function AutomacoesPage() {
   return (
     <>
+      <PageJsonLd path="/solucoes/automacoes" faq={FAQ} />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="20%" />
         <div className="relative mx-auto max-w-[1280px] px-5 pt-28 pb-28 text-center md:px-8 md:pt-35 lg:px-12">

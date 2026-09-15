@@ -7,12 +7,11 @@ import { FaqSection, type FaqItem } from "@/components/faq";
 import { LazyHeroForceField as HeroForceField } from "@/components/lazy-hero-force-field";
 import { ProblemRail } from "@/components/problem-rail";
 import { StepList, type Step } from "@/components/step-track";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...pageCanonical("/"),
-};
+export const metadata: Metadata = pageMeta("/");
 
 const PROBLEMS = [
   {
@@ -111,6 +110,7 @@ const FAQ: FaqItem[] = [
 export default function HomePage() {
   return (
     <>
+      <PageJsonLd path="/" faq={FAQ} />
       <section className="relative grid overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <HeroBackdrop glowAt="72%" glowStrength={0.42} scan="full" />

@@ -3,18 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cases",
+export const metadata: Metadata = pageMeta("/cases", {
+  title: "Sistemas em produção",
   description: "Dois produtos que a Nodex Labs construiu e ainda opera.",
-  ...pageCanonical("/cases"),
-};
+});
 
 export default function CasesPage() {
   return (
     <>
+      <PageJsonLd path="/cases" />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="25%" />
         <div className="relative mx-auto max-w-[1280px] px-5 pt-28 pb-24 md:px-8 lg:px-12">

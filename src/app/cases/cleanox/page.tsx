@@ -3,15 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Case Cleanox",
+export const metadata: Metadata = pageMeta("/cases/cleanox", {
+  title: "Sistema da Cleanox",
   description:
     "Ordens de serviço, agenda, financeiro, comissão e app do profissional. Cliente e caixa ficam na marca.",
-  ...pageCanonical("/cases/cleanox"),
-};
+});
 
 const BUILT = [
   "Cadastro de cliente e ordem de serviço",
@@ -33,6 +33,7 @@ const FLOW = [
 export default function CleanoxPage() {
   return (
     <>
+      <PageJsonLd path="/cases/cleanox" />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="25%" />
         <div className="relative mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center gap-14 px-5 pt-28 pb-24 md:px-8 lg:px-12">

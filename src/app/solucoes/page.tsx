@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Soluções",
+export const metadata: Metadata = pageMeta("/solucoes", {
+  title: "Chatbots, automações e sistemas",
   description:
     "Chatbot para conversa. Automação para processo. Sistema quando a ferramenta pronta não serve.",
-  ...pageCanonical("/solucoes"),
-};
+});
 
 const FRONTS = [
   {
@@ -40,6 +40,7 @@ const FRONTS = [
 export default function SolucoesPage() {
   return (
     <>
+      <PageJsonLd path="/solucoes" />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="25%" />
         <div className="relative mx-auto max-w-[1280px] px-5 pt-28 pb-24 md:px-8 lg:px-12">

@@ -1,10 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { PUBLIC_PAGES, SITE_URL } from "@/lib/seo";
-
-function absoluteUrl(path: string) {
-  return path === "/" ? SITE_URL : `${SITE_URL}${path}`;
-}
+import { absoluteUrl, PUBLIC_PAGES } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return PUBLIC_PAGES.map((page) => ({

@@ -4,6 +4,7 @@ import { IBM_Plex_Sans, JetBrains_Mono, Poppins } from "next/font/google";
 import { Banner } from "@/components/banner";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { JsonLd } from "@/components/json-ld";
 import { SITE_DESCRIPTION, SITE_URL, siteJsonLd } from "@/lib/seo";
 
 import "./globals.css";
@@ -93,12 +94,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${plex.variable} ${jetbrains.variable}`}
     >
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(siteJsonLd()).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={siteJsonLd()} />
         <a href="#conteudo" className="nx-btn sr-only focus:not-sr-only">
           Pular para o conteúdo
         </a>

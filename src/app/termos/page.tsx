@@ -8,14 +8,14 @@ import {
   LegalHeader,
   LegalText,
 } from "@/components/legal";
-import { pageCanonical } from "@/lib/seo";
+import { PageJsonLd } from "@/components/json-ld";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/termos", {
   title: "Termos de Uso",
   description:
     "Regras de uso deste site e do canal de contato da Nodex Labs.",
-  ...pageCanonical("/termos"),
-};
+});
 
 const ALLOWED = [
   "Navegar, ler e compartilhar o conteúdo com atribuição à Nodex Labs.",
@@ -26,6 +26,7 @@ const ALLOWED = [
 export default function TermosPage() {
   return (
     <>
+      <PageJsonLd path="/termos" />
       <LegalHeader
         badge="CONDIÇÕES DE USO"
         title="Termos de Uso"
