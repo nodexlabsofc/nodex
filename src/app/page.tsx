@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CaseCoverflow, type CaseSlide } from "@/components/case-coverflow";
@@ -7,7 +8,11 @@ import { LazyHeroForceField as HeroForceField } from "@/components/lazy-hero-for
 import { ProblemRail } from "@/components/problem-rail";
 import { StepList, type Step } from "@/components/step-track";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
+export const metadata: Metadata = {
+  ...pageCanonical("/"),
+};
 
 const PROBLEMS = [
   {

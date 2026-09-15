@@ -5,11 +5,13 @@ import { CtaForm } from "@/components/cta-block";
 import { FaqSection, type FaqItem } from "@/components/faq";
 import { PieceStage } from "@/components/piece-stage";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Automações",
   description:
     "Leitura de documento, decisão e registro no sistema que vocês já usam. Com trilha para auditar.",
+  ...pageCanonical("/solucoes/automacoes"),
 };
 
 const PIECES = [

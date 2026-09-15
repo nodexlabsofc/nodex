@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import { CtaButtons } from "@/components/cta-buttons";
 import { HistoryTrack, type Chapter } from "@/components/history-track";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Sobre",
   description:
     "Engenharia de software e automações. Quase três anos entregando sistemas, automações e chatbots em produção.",
+  ...pageCanonical("/sobre"),
 };
 
 const CHAPTERS: Chapter[] = [

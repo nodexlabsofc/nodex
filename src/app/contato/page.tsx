@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact-form";
 import { HeroBackdrop, Section } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 import { EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contato",
   description:
     "Nos conte os seus problemas, que te diremos a solução.",
+  ...pageCanonical("/contato"),
 };
 
 const FAQ = [

@@ -4,10 +4,12 @@ import Link from "next/link";
 
 import { CtaButtons } from "@/components/cta-buttons";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
+import { pageCanonical } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Cases",
   description: "Dois produtos que a Nodex Labs construiu e ainda opera.",
+  ...pageCanonical("/cases"),
 };
 
 export default function CasesPage() {
