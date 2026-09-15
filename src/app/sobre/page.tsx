@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 import { CtaButtons } from "@/components/cta-buttons";
 import { HistoryTrack, type Chapter } from "@/components/history-track";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Sobre",
+export const metadata: Metadata = pageMeta("/sobre", {
+  title: "Engenharia de software e automações",
   description:
     "Engenharia de software e automações. Quase três anos entregando sistemas, automações e chatbots em produção.",
-  ...pageCanonical("/sobre"),
-};
+});
 
 const CHAPTERS: Chapter[] = [
   {
@@ -58,6 +58,7 @@ const PILLARS = [
 export default function SobrePage() {
   return (
     <>
+      <PageJsonLd path="/sobre" />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="30%" />
         <div className="relative mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center gap-12 px-5 pt-28 pb-24 md:px-8 lg:px-12">

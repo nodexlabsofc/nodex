@@ -5,15 +5,15 @@ import Link from "next/link";
 import { CtaForm } from "@/components/cta-block";
 import { FaqSection, type FaqItem } from "@/components/faq";
 import { StepList, type Step } from "@/components/step-track";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, HeroPill, Section, SectionHead } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Chatbots",
+export const metadata: Metadata = pageMeta("/solucoes/chatbots", {
+  title: "Chatbot para WhatsApp",
   description:
     "Chatbot que responde com a sua base, no canal do cliente, e passa para humano sem fazer a pessoa repetir.",
-  ...pageCanonical("/solucoes/chatbots"),
-};
+});
 
 const AUDIENCE = [
   {
@@ -98,6 +98,7 @@ const FAQ: FaqItem[] = [
 export default function ChatbotsPage() {
   return (
     <>
+      <PageJsonLd path="/solucoes/chatbots" faq={FAQ} />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="20%" />
         <div className="relative mx-auto max-w-[1280px] px-5 pt-28 pb-28 text-center md:px-8 md:pt-35 lg:px-12">

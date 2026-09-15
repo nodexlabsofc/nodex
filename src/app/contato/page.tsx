@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact-form";
+import { PageJsonLd } from "@/components/json-ld";
 import { HeroBackdrop, Section } from "@/components/ui";
-import { pageCanonical } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 import { EMAIL } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contato",
+export const metadata: Metadata = pageMeta("/contato", {
+  title: "Fale com a Nodex",
   description:
     "Nos conte os seus problemas, que te diremos a solução.",
-  ...pageCanonical("/contato"),
-};
+});
 
 const FAQ = [
   {
@@ -32,6 +32,7 @@ const FAQ = [
 export default function ContatoPage() {
   return (
     <>
+      <PageJsonLd path="/contato" faq={FAQ} />
       <section className="relative overflow-hidden">
         <HeroBackdrop glowAt="30%" glowStrength={0.3} />
         <div className="relative mx-auto grid max-w-[1280px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-start gap-14 px-5 pt-28 pb-24 md:px-8 lg:px-12">

@@ -8,15 +8,15 @@ import {
   LegalTable,
   LegalText,
 } from "@/components/legal";
-import { pageCanonical } from "@/lib/seo";
+import { PageJsonLd } from "@/components/json-ld";
+import { pageMeta } from "@/lib/seo";
 import { EMAIL, PHONE_DISPLAY } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta("/privacidade", {
   title: "Política de Privacidade",
   description:
     "Como a Nodex Labs coleta, usa, armazena e protege dados pessoais.",
-  ...pageCanonical("/privacidade"),
-};
+});
 
 const LEGAL_BASES = [
   {
@@ -51,6 +51,7 @@ const RIGHTS = [
 export default function PrivacidadePage() {
   return (
     <>
+      <PageJsonLd path="/privacidade" />
       <LegalHeader
         badge="LGPD · LEI 13.709/2018"
         title="Política de Privacidade"
