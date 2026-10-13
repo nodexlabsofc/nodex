@@ -25,6 +25,11 @@ const LEGAL_BASES = [
       "Execução de contrato ou procedimentos preliminares (art. 7º, V).",
   },
   {
+    term: "Entregar um guia gratuito solicitado",
+    definition:
+      "Consentimento (art. 7º, I), dado no formulário do guia e revogável a qualquer momento.",
+  },
+  {
     term: "Envio de conteúdo e novidades",
     definition: "Consentimento (art. 7º, I), revogável a qualquer momento.",
   },
@@ -56,7 +61,7 @@ export default function PrivacidadePage() {
         badge="LGPD · LEI 13.709/2018"
         title="Política de Privacidade"
         lead="Como a Nodex Labs coleta, usa, armazena e protege dados pessoais neste site e nos projetos que executa."
-        updatedAt="28/08/2026"
+        updatedAt="12/10/2026"
       />
 
       <LegalBody>
@@ -78,6 +83,12 @@ export default function PrivacidadePage() {
               <span className="text-white">Dados que você informa:</span> nome,
               e-mail corporativo, empresa, telefone e a descrição do desafio
               enviada pelo formulário ou pelo WhatsApp.
+            </LegalBullet>
+            <LegalBullet>
+              <span className="text-white">Pedido de guia gratuito:</span>{" "}
+              nome, e-mail e WhatsApp informados no formulário do guia, o guia
+              solicitado e a origem do acesso (a campanha ou o post de onde você
+              veio), junto com o endereço IP e o navegador usados no envio.
             </LegalBullet>
             <LegalBullet>
               <span className="text-white">Dados de navegação:</span> endereço
