@@ -20,6 +20,7 @@ export const PUBLIC_PAGES = [
   { path: "/cases/appexcrm", changeFrequency: "monthly", priority: 0.7 },
   { path: "/sobre", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contato", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/comece", changeFrequency: "monthly", priority: 0.6 },
   { path: "/privacidade", changeFrequency: "yearly", priority: 0.2 },
   { path: "/termos", changeFrequency: "yearly", priority: 0.2 },
 ] as const;
@@ -51,6 +52,7 @@ export const BREADCRUMBS: Record<string, { name: string; path: string }[]> = {
   ],
   "/sobre": [HOME, { name: "Sobre", path: "/sobre" }],
   "/contato": [HOME, { name: "Contato", path: "/contato" }],
+  "/comece": [HOME, { name: "Por onde começar", path: "/comece" }],
   "/privacidade": [HOME, { name: "Privacidade", path: "/privacidade" }],
   "/termos": [HOME, { name: "Termos", path: "/termos" }],
 };

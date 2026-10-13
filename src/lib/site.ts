@@ -11,6 +11,15 @@ export const EMAIL = "contato@nodexlabs.com.br";
 export const ADDRESS = "Rua Marcos Albino, 300 — km 12, Itajaí/SC";
 export const CNPJ = "57.842.141/0001-79";
 
+/**
+ * Link do WhatsApp da Nodex. O texto pronto muda conforme a página, e é por
+ * ele que dá pra saber de onde o contato veio.
+ */
+export function whatsappUrl(text?: string) {
+  const base = `https://wa.me/${PHONE_WHATSAPP}`;
+  return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+}
+
 export type PageKey =
   | "home"
   | "solucoes"
