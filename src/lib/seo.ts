@@ -15,6 +15,7 @@ export const PUBLIC_PAGES = [
   { path: "/solucoes", changeFrequency: "monthly", priority: 0.8 },
   { path: "/solucoes/chatbots", changeFrequency: "monthly", priority: 0.8 },
   { path: "/solucoes/automacoes", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/catalogo", changeFrequency: "monthly", priority: 0.7 },
   { path: "/cases", changeFrequency: "monthly", priority: 0.8 },
   { path: "/cases/cleanox", changeFrequency: "monthly", priority: 0.7 },
   { path: "/cases/appexcrm", changeFrequency: "monthly", priority: 0.7 },
@@ -38,6 +39,7 @@ export const BREADCRUMBS: Record<string, { name: string; path: string }[]> = {
     { name: "Soluções", path: "/solucoes" },
     { name: "Automações", path: "/solucoes/automacoes" },
   ],
+  "/catalogo": [HOME, { name: "Catálogo", path: "/catalogo" }],
   "/cases": [HOME, { name: "Cases", path: "/cases" }],
   "/cases/cleanox": [
     HOME,
